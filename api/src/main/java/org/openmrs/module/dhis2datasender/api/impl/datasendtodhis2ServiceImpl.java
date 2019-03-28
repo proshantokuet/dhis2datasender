@@ -19,6 +19,7 @@ import org.openmrs.User;
 import org.openmrs.api.impl.BaseOpenmrsService;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.openmrs.module.dhis2datasender.EncounterMarker;
 import org.openmrs.module.dhis2datasender.api.datasendtodhis2Service;
 import org.openmrs.module.dhis2datasender.api.db.datasendtodhis2DAO;
 
@@ -49,6 +50,17 @@ public class datasendtodhis2ServiceImpl extends BaseOpenmrsService implements da
 	public List<User> getUserList() {
 		// TODO Auto-generated method stub
 		return dao.getUserList();
+	}
+
+	@Override
+	public EncounterMarker saveEncountermarker(EncounterMarker encounterMarker) {
+		// TODO Auto-generated method stub
+		try{
+		dao.saveEncountermarker(encounterMarker);
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		return encounterMarker;
 	}
 	
 }

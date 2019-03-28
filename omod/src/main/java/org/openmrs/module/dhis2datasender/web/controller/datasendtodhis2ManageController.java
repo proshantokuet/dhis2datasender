@@ -16,6 +16,8 @@ package org.openmrs.module.dhis2datasender.web.controller;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.openmrs.api.context.Context;
+import org.openmrs.module.dhis2datasender.EncounterMarker;
+import org.openmrs.module.dhis2datasender.api.EncounterMarkerApi;
 import org.openmrs.module.dhis2datasender.api.datasendtodhis2Service;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -28,7 +30,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class  datasendtodhis2ManageController {
 	
-	protected final Log log = LogFactory.getLog(getClass());
+	protected final Log log = LogFactory.getLog(datasendtodhis2ManageController.class);
 	
 	@RequestMapping(value = "/module/dhis2datasender/manage", method = RequestMethod.GET)
 	public void manage(ModelMap model) {
@@ -37,7 +39,13 @@ public class  datasendtodhis2ManageController {
 	
 	@RequestMapping(value = "/module/dhis2datasender/userList", method = RequestMethod.GET)
 	public void usserList(ModelMap model) {
-		
+		EncounterMarker encounterMarker = new EncounterMarker();
+		encounterMarker.setLastReadEntryId(34);
+		encounterMarker.setName("Patient");
+		log.info("saving new module objects...................");
+		Context.getService(datasendtodhis2Service.class).saveEncountermarker(encounterMarker);
+		Context.getService(EncounterMarkerApi.class).saveEncounter(encounterMarker);
+
 		model.addAttribute("uu",Context.getService(datasendtodhis2Service.class).getUserList());
 		model.addAttribute("user", Context.getAuthenticatedUser());
 	} 

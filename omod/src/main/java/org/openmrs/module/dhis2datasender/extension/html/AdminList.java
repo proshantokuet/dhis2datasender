@@ -36,7 +36,7 @@ public class AdminList extends AdministrationSectionExt {
 	 * @see AdministrationSectionExt#getTitle()
 	 */
 	public String getTitle() {
-		return "dhis2datasender.title";
+		return "dhis2datasender";
 	}
 	
 	/**
@@ -46,6 +46,7 @@ public class AdminList extends AdministrationSectionExt {
 		LinkedHashMap<String, String> map = new LinkedHashMap<String, String>();
 		map.put("/module/dhis2datasender/manage.form", "dhis2datasender.manage");
 		map.put("/module/dhis2datasender/userList.form", "Login User");
+		map.put("/module/dhis2datasender/saveEncounterMarker.form", "save Encounter Marker");
 		return map;
 	}
 	

@@ -17,6 +17,7 @@ import java.util.List;
 
 import org.openmrs.User;
 import org.openmrs.api.OpenmrsService;
+import org.openmrs.module.dhis2datasender.EncounterMarker;
 import org.springframework.transaction.annotation.Transactional;
 
 /**
@@ -36,5 +37,6 @@ public interface datasendtodhis2Service extends OpenmrsService {
 	 * Add service methods here
 	 * 
 	 */
+	public EncounterMarker saveEncountermarker(EncounterMarker encounterMarker);
 	public List<User> getUserList();
 }

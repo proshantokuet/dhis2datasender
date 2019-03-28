@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="org.openmrs.module.dhis2datasender.EncounterMarker" table="dhis_marker">
+        <id column="marker_id" name="markerId" type="int">
+            <generator class="native"/>
+        </id> 
+        <property name="lastReadEntryId" column="last_read_entry_id" type="int"/>
+	    <property name="name" column="name" type="java.lang.String"/>
+    </class>
+</hibernate-mapping>

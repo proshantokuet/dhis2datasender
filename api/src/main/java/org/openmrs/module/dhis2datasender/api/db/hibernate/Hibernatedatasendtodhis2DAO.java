@@ -21,6 +21,7 @@ import org.apache.commons.logging.LogFactory;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.openmrs.User;
+import org.openmrs.module.dhis2datasender.EncounterMarker;
 import org.openmrs.module.dhis2datasender.api.db.datasendtodhis2DAO;
 
 /**
@@ -66,5 +67,11 @@ public class Hibernatedatasendtodhis2DAO implements datasendtodhis2DAO {
 				throw new RuntimeException("Failed to get the current hibernate session from HibernateTeamLogDAO", e);
 			}
 		}
+	}
+
+	@Override
+	public EncounterMarker saveEncountermarker(EncounterMarker encounterMarker) {
+		sessionFactory.getCurrentSession().saveOrUpdate(encounterMarker);
+		return encounterMarker;
 	}
 }

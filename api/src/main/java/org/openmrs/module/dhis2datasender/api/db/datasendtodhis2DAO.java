@@ -16,6 +16,7 @@ package org.openmrs.module.dhis2datasender.api.db;
 import java.util.List;
 
 import org.openmrs.User;
+import org.openmrs.module.dhis2datasender.EncounterMarker;
 import org.openmrs.module.dhis2datasender.api.datasendtodhis2Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -28,4 +29,5 @@ public interface datasendtodhis2DAO {
 	 * Add DAO methods here
 	 */
 	public List<User> getUserList();
+	public EncounterMarker saveEncountermarker(EncounterMarker encounterMarker);
 }
