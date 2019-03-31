@@ -1,5 +1,7 @@
 package org.openmrs.module.dhis2datasender.api.impl;
 
+import java.util.List;
+
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.openmrs.api.impl.BaseOpenmrsService;
@@ -25,6 +27,24 @@ public class EncounterMarkerServiceImpl extends BaseOpenmrsService implements En
 		log.info("OKKK");
 		dao.saveEncounter(encounterMarker);
 		
+	}
+
+	@Override
+	public List<EncounterMarker> getAll() {
+		// TODO Auto-generated method stub
+		return dao.getAll();
+	}
+
+	@Override
+	public EncounterMarker findBiId(int id) {
+		// TODO Auto-generated method stub
+		return dao.findBiId(id);
+	}
+
+	@Override
+	public EncounterMarker deleteById(int id) {
+		// TODO Auto-generated method stub
+		return dao.deleteById(id);
 	}
 
 }
