@@ -32,7 +32,8 @@
 	<mappingFiles>
 				
 		datasendtodhis2.hbm.xml
-		encountermarker.hbm.xml		
+		encountermarker.hbm.xml
+			
 				
 	</mappingFiles>
 

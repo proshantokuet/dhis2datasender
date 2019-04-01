@@ -16,16 +16,21 @@ package org.openmrs.module.dhis2datasender.api.impl;
 import java.util.List;
 
 import org.openmrs.User;
+import org.openmrs.api.context.Context;
 import org.openmrs.api.impl.BaseOpenmrsService;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.openmrs.module.dhis2datasender.EncounterMarker;
 import org.openmrs.module.dhis2datasender.api.datasendtodhis2Service;
 import org.openmrs.module.dhis2datasender.api.db.datasendtodhis2DAO;
+import org.springframework.scheduling.annotation.EnableScheduling;
+import org.springframework.scheduling.annotation.Scheduled;
 
 /**
  * It is a default implementation of {@link datasendtodhis2Service}.
+ * 
  */
+
 public class datasendtodhis2ServiceImpl extends BaseOpenmrsService implements datasendtodhis2Service {
 	
 	protected final Log log = LogFactory.getLog(this.getClass());
@@ -62,5 +67,7 @@ public class datasendtodhis2ServiceImpl extends BaseOpenmrsService implements da
 		}
 		return encounterMarker;
 	}
+	
+	
 	
 }
